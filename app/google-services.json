@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005081343444",
+    "project_id": "coderschallenge-279a4",
+    "storage_bucket": "coderschallenge-279a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005081343444:android:694a1cfed4c667c4625241",
+        "android_client_info": {
+          "package_name": "com.example.coderschallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJomd9PreyFuj__Hv2hFJjLYefC9Rb2-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
