@@ -10,18 +10,16 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.FirebaseApp;
-import android.text.TextUtils;
+
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Player_watch extends AppCompatActivity {
     FirebaseAuth mAuth;
-    Button singleModeButton, battleModeButton, playerInfoButton;
+    Button singleModeButton, playerInfoButton;
     TextView userEmail;
     String currentEmail;
 
@@ -32,7 +30,7 @@ public class Player_watch extends AppCompatActivity {
         EdgeToEdge.enable(this);
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_player_watch);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.BackButton), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -46,9 +44,19 @@ public class Player_watch extends AppCompatActivity {
         }
         //連結UI元素
         singleModeButton = findViewById(R.id.singleMode);
-        battleModeButton = findViewById(R.id.battleMode);
         playerInfoButton = findViewById(R.id.playerInfo);
         userEmail = findViewById(R.id.currentUserEmail);
         userEmail.setText(currentEmail);
+
+        //單人模式按鈕設計
+        singleModeButton.setOnClickListener(view -> {
+            Intent nextStep = new Intent(Player_watch.this, chooseDifficultyAndQuestions.class);
+            nextStep.putExtra("mode", "單人模式");
+            startActivity(nextStep);
+        });
+        //玩家資訊按鈕設計
+        playerInfoButton.setOnClickListener(view ->{
+
+        });
     }
 }
